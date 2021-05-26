@@ -7,12 +7,12 @@ const assertEqual = function(actual, expected) {
    
 };
 
-const head = function(actual){
+const head = function(actual) {
   for (let i = 0; i < actual.length; i++) {
     return actual[0];
   }
 
-}
+};
 
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);

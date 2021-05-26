@@ -8,16 +8,18 @@ const eqArrays = function(first, second) {
   for (let i = 0; i < first.length; i++) {
     if (first[i] !== second[i]) {
       check = false;
-    }
+    } 
   }
   return check;
 };
 
-const assertArraysEqual = function(first, second) {
-  if(eqArrays(first, second)){
-    console.log(`✅✅✅Assertion passed: ${first} === ${second}`);
+const assertArraysEqual = function(actual, expected) {
+  
+    if(!eqArrays(actual, expected)) { 
+    console.log(`❌❌❌Assertion failed: ${actual} !== ${expected}`);
+    
   } else {
-    console.log(`❌❌❌Assertion failed: ${first} !== ${second}`);
+    console.log(`✅✅✅Assertion passed: ${actual} === ${expected}`);
 }
 }
 
@@ -36,7 +38,8 @@ const middle = function(array) {
   }
   return middleArray;
 };
-console.log(middle([1, 2, 3]));
-console.log(middle([1, 2, 3, 4]));
-assertArraysEqual(eqArrays(middle([1, 2, 3]), [2]), true);
-assertArraysEqual(eqArrays(middle([1, 2, 3, 4]), [2, 3]), true);
+console.log(middle([1, 2, 3, 4, 5]));
+console.log(middle([1, 2, 3, 4, 5, 6, 7, 8, 9 ,10]));
+//assertArraysEqual(eqArrays(middle([1, 2, 3, 4, 5]), [3]), true);
+//assertArraysEqual(eqArrays(middle([1, 2, 3, 4, 5, 6, 7, 8, 9]), [7]), true);
+assertArraysEqual(middle([1,2,3,4]), [1,3]);
