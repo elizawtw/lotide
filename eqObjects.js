@@ -7,20 +7,20 @@ const assertEqual = function(actual, expected) {
    
 };
 
-const eqArrays = function(first, second){
+const eqArrays = function(first, second) {
   let check = true;
   //check length of arrays
   if (first.length !== second.length) {
     check = false;
   }
   //if length is same
-  for (let i = 0; i < first.length; i++){
-    if (first[i] !== second[i]){
+  for (let i = 0; i < first.length; i++) {
+    if (first[i] !== second[i]) {
       check = false;
     }
   }
   return check;
-}
+};
 
 const eqObjects = function(object1, object2) {
   const key1 = Object.keys(object1);//[a,b]
@@ -29,13 +29,13 @@ const eqObjects = function(object1, object2) {
     return false;
   }
   for (const key of key1) {
-    if (Array.isArray(object1[key]) && Array.isArray(object2[key])){
+    if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       let check = eqArrays(object1[key], object2[key]);
-      if( check === false) {
+      if (check === false) {
         return false;
       }
     } else if (!Array.isArray(object1[key]) && !Array.isArray(object2[key])) {
-      if( object1[key] !== object2[key]) {
+      if (object1[key] !== object2[key]) {
         return false;
       }
     } else {
@@ -43,7 +43,7 @@ const eqObjects = function(object1, object2) {
     }
   }
   return true;
-}
+};
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
 assertEqual(eqObjects(ab, ba), true); // => true
