@@ -14,11 +14,11 @@ const eqArrays = function(first, second){
 }
 
 const assertArraysEqual = function(first, second) {
-  if(eqArrays(first, second)){
+  if(first === second){
     console.log(`✅✅✅Assertion passed: ${first} === ${second}`);
   } else {
     console.log(`❌❌❌Assertion failed: ${first} !== ${second}`);
 }
 }
 
-assertArraysEqual([1,2,3],[1,2,4])
+assertArraysEqual(eqArrays([1,2,3],[1,2,3]), false)
