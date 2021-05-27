@@ -60,4 +60,4 @@ const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false); // => false
 
 const cd3 = { c: [1,2,3,4], d: ["2", 3]};
-assertEqual(eqObjects(cd, cd3), false);
+assertEqual(eqObjects(cd, cd3), true);
